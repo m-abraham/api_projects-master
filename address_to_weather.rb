@@ -30,10 +30,12 @@ raw_dataf = open(url_of_forecast).read
 parsed_dataf = JSON.parse(raw_dataf)
 
 the_temperature = parsed_dataf["currently"]["temperature"]
-the_hour_outlook = parsed_dataf["hourly"]["summary"]
-the_day_outlook = parsed_dataf["daily"]["summary"]
+the_hour_outlook = parsed_dataf["minutely"]["summary"]
+the_day_outlook = parsed_dataf["hourly"]["summary"]
+the_week_outlook = parsed_dataf["daily"]["summary"]
 
 
 puts "The current temperature at #{street_address} is #{the_temperature} degrees."
 puts "The outlook for the next hour is: #{the_hour_outlook}"
 puts "The outlook for the next day is: #{the_day_outlook}"
+puts "The outlook for the next week is: #{the_week_outlook}"

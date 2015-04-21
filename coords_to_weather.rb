@@ -26,9 +26,11 @@ parsed_dataf = JSON.parse(raw_dataf)
 # Ultimately, we want the following line to work when uncommented:
 
 the_temperature = parsed_dataf["currently"]["temperature"]
-the_hour_outlook = parsed_dataf["hourly"]["summary"]
-the_day_outlook = parsed_dataf["daily"]["summary"]
+the_hour_outlook = parsed_dataf["minutely"]["summary"]
+the_day_outlook = parsed_dataf["hourly"]["summary"]
+the_week_outlook = parsed_dataf["daily"]["summary"]
 
 puts "The current temperature at #{the_latitude}, #{the_longitude} is #{the_temperature} degrees."
 puts "The outlook for the next hour is: #{the_hour_outlook}"
 puts "The outlook for the next day is: #{the_day_outlook}"
+puts "The outlook for the next week is: #{the_week_outlook}"
